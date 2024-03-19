@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>CozyGames</title>
+    <link rel="icon" href="https://minecraft.wiki/images/Bedrock_Edition_App_Store_icon_2.png?ec415" type="image/x-icon" />
+    <link href="~/lib/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
+
+    <!-- Agrega los enlaces a los estilos de Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Establece el tamaño mínimo de la pantalla al 100% de la altura visible */
+            margin: 0; /* Elimina el margen predeterminado del body */
+            align-items: center; /* Centra horizontalmente el contenido */
+        }
+
+        main {
+            flex-grow: 1; /* Hace que el contenido principal crezca para ocupar el espacio disponible */
+            display: flex;
+            justify-content: center; /* Centra horizontalmente el contenido de main */
+            align-items: center; /* Centra verticalmente el contenido de main */
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Contenido de la página -->
+    <main style="background-color: #201f31;width: 100%;">
+        @RenderBody()
+    </main>
+
+    <!-- Agrega los scripts de Bootstrap y jQuery (necesario para el funcionamiento del navbar) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    @await RenderSectionAsync("scripts", false)
+</body>
+</html>
