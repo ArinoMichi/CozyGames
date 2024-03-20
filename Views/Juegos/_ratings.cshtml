@@ -23,17 +23,14 @@
         {
             var liked = (likes.Any(x => x.IdRating == rating.IdRating));
             <div class="row">
-                <!-- Foto del usuario -->
                 <div class="col-md-1 align-content-end">
                     <a asp-action="PanelUser" asp-controller="Users" asp-route-idUser="@rating.IdUsuario">
                         <img src="~/images/@rating.FotoUser" class="rounded-circle img-fluid" alt="Foto del usuario" style="max-width: 75px;" />
                     </a>
                 </div>
-                <!-- Contenido del comentario -->
                 <div class="col-md-11" style="padding-left:30px">
                     <div>
                         <div class="row">
-                            <!-- Título del comentario -->
                             <div class="col-10 mb-2">
                                 <h4>
                                     <span style="font-weight: bold; font-size: 20px;">@rating.NombreUser</span>
@@ -45,13 +42,11 @@
                             </div>
                         </div>
                         <div class="row">
-                            <!-- Descripción del comentario -->
                             <div class="col-12">
                                 <h5>@rating.Titulo</h5>
                             </div>
                         </div>
                         <div class="row">
-                            <!-- Descripción del comentario -->
                             <div class="col-9">
                                 <p class="text-break">@rating.Comentario</p>
                             </div>
@@ -85,7 +80,6 @@
                     </div>
                 </div>
             </div>
-            <!-- Separador entre comentarios -->
             <hr style="border-color: white;" />
         }
     </div>

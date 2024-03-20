@@ -4,11 +4,6 @@
     var notaEntera = (double)Math.Round(Model.NotaMedia, 2);
 }
 
-
-@* <button id="searchButton" class="btn rounded-button" type="submit">
-    <i class="bi bi-arrow-left"></i>
-</button>
- *@
 <style>
     main {
         margin-top: 60px;
@@ -23,11 +18,11 @@
         position: fixed;
         top: 100px;
         left: 20px;
-        font-size: 24px; /* Puedes ajustar el tamaño según tus preferencias */
-        color: #fff; /* Color blanco */
-        background-color: transparent; /* Fondo transparente */
-        border: none; /* Sin borde */
-        outline: none; /* Sin contorno al hacer clic */
+        font-size: 24px;
+        color: #fff;
+        background-color: transparent;
+        border: none; 
+        outline: none;
         cursor: pointer;
     }
 </style>
@@ -82,7 +77,8 @@
         </div>
     </div>
 </div>
-<!-- Modal para la calificaciÃ³n -->
+
+
 <div class="modal fade" id="ratingModal" tabindex="-1" aria-labelledby="ratingModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -92,12 +88,12 @@
             </div>
             <div class="modal-body">
 
-                <!-- Imagen en el modal -->
+                
                 <div class="mb-4">
                     <img src="@Model.ImagenBanner" alt="@Model.Nombre" class="img-fluid rounded" />
                 </div>
 
-                <!-- Formulario dentro del modal -->
+                
                 <form method="post" action="/Juegos/Rate">
                     <div class="mb-3">
                         <label for="nota" class="form-label">Nota:</label>

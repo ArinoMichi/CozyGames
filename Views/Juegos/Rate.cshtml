@@ -6,12 +6,10 @@
             <div class="card p-4">
                 <img src="@Model.ImagenBanner" alt="@Model.Nombre" class="img-fluid rounded mb-4" />
 
-                <!-- Botón para abrir el modal -->
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#calificacionModal">
                     Calificar
                 </button>
 
-                <!-- Modal -->
                 <div class="modal fade" id="calificacionModal" tabindex="-1" aria-labelledby="calificacionModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -21,7 +19,6 @@
                             </div>
                             <div class="modal-body">
 
-                                <!-- Formulario dentro del modal -->
                                 <form method="post">
                                     <div class="mb-3">
                                         <label for="nota" class="form-label">Nota:</label>
