@@ -1,0 +1,92 @@
+﻿@model List<RatingDetallado>
+
+@{
+    Usuario user = null;
+    if (Context.User.Identity.IsAuthenticated)
+    {
+        string token = Context.User.FindFirst(x => x.Type == "TOKEN").Value;
+        user = await service.GetCurentUser(token);
+    }
+    List<LikeComentario> likes = new List<LikeComentario>();
+    if(user != null)
+    {
+        int idusuario = user.IdUsuario;
+         likes = await this.service.GetLikesUserAsync(idusuario);
+    }
+    
+}
+
+<!-- Ratings -->
+<div class="row justify-content-center" style="color: white; background-color:#201f31; padding-top:30px">
+    <div class="col-12 d-flex justify-content-center">
+        <h3 class="text-white">---RATINGS---</h3>
+    </div>
+
+    <div class="col-lg-6">
+
+        @foreach (var rating in Model)
+        {
+            var liked = (likes.Any(x => x.IdRating == rating.IdRating));
+            <div class="row">
+                <div class="col-md-1 align-content-end">
+                    <a asp-action="PanelUser" asp-controller="Users" asp-route-idUser="@rating.IdUsuario">
+                        <img src="@("https://storageaccountcozygames.blob.core.windows.net/fotos/" + rating.FotoUser)"
+                             class="rounded-circle img-fluid" alt="Foto del usuario" style="max-width: 75px;" />
+                    </a>
+                </div>
+                <div class="col-md-11" style="padding-left:30px">
+                    <div>
+                        <div class="row">
+                            <div class="col-10 mb-2">
+                                <h4>
+                                    <span style="font-weight: bold; font-size: 20px;">@rating.NombreUser</span>
+                                    <span style="font-size: 16px; color:grey">@rating.Fecha.ToShortDateString()</span>
+                                </h4>
+                            </div>
+                            <div class="col-2">
+                                <h3 style="color:#ffbade">@rating.Nota</h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <h5>@rating.Titulo</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-9">
+                                <p class="text-break">@rating.Comentario</p>
+                            </div>
+                            <div class="col-3 text-end">
+                                @if(user == null)
+                                {
+                                    <a asp-action="LogIn" asp-controller="Users" class="text-decoration-none text-white">
+                                        <span class="d-inline" style="font-size: 16px; color:grey">Helpful?</span>
+                                        <i class="d-inline bi bi-hand-thumbs-up-fill h3"></i>
+                                        <span class="d-inline fw-bold">@rating.LikesTotales</span>
+                                    </a>
+                                }
+                                else if(liked)
+                                {
+                                    <a data-commentid="@rating.IdRating" onclick="likeButton(this)">
+                                        <span class="d-inline" style="font-size: 16px; color:grey">Helpful?</span>
+                                        <i class="d-inline bi bi-hand-thumbs-up-fill h3"></i>
+                                        <span class="d-inline fw-bold">@rating.LikesTotales</span>
+                                    </a>
+                                }
+                                else
+                                {
+                                    <a data-commentid="@rating.IdRating" onclick="likeButton(this)">
+                                        <span class="d-inline" style="font-size: 16px; color:grey">Helpful?</span>
+                                        <i class="d-inline bi bi-hand-thumbs-up h3"></i>
+                                        <span class="d-inline fw-bold">@rating.LikesTotales</span>
+                                    </a>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr style="border-color: white;" />
+        }
+    </div>
+</div>

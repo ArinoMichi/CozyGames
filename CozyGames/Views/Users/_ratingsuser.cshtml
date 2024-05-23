@@ -1,0 +1,83 @@
+﻿@model List<RatingDetallado>
+
+@{
+    Usuario currentUser = null;
+    if (Context.User.Identity.IsAuthenticated)
+    {
+        string token = Context.User.FindFirst(x => x.Type == "TOKEN").Value;
+        currentUser = await service.GetCurentUser(token);
+    }
+    Usuario perfil = ViewData["USUARIO"] as Usuario;
+}
+
+<div class="row justify-content-center" style="color: white; background-color:#201f31; padding-top:30px">
+    <div class="col-12 d-flex justify-content-center">
+        <h3 class="text-white">---RATINGS---</h3>
+    </div>
+
+    <div class="col-lg-6">
+
+        @foreach (var rating in Model)
+        {
+            <div class="row justify-content-center">
+
+                <div class="col-md-11 " style="padding-left:30px">
+                    <div>
+                        <div class="row">
+                            <div class="col-10 mb-2">
+                                <h4>
+                                    <span style="font-weight: bold; font-size: 20px;">
+                                        <a asp-action="Details" asp-controller="Juegos" asp-route-id="@rating.IdJuego" class="text-white">@rating.NombreJuego</a>
+                                    </span>
+                                    <span style="font-size: 16px; color:grey">@rating.Fecha.ToShortDateString()</span>
+                                </h4>
+                            </div>
+                            <div class="col-2">
+                                <h3 style="color:#ffbade">@rating.Nota</h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <h5>@rating.Titulo</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-11">
+                                <p class="text-break">@rating.Comentario</p>
+                            </div>
+                            @if (currentUser != null && currentUser.IdUsuario == perfil.IdUsuario)
+                            {
+                                <div class="col-1">
+                                    <a href="#" class="text-danger" data-toggle="modal" data-target="#deleteCommentModal-@rating.IdRating">
+                                        <i class="bi bi-trash"></i>
+                                    </a>
+                                </div>
+                                <div class="modal fade text-dark" id="deleteCommentModal-@rating.IdRating" tabindex="-1" role="dialog" aria-labelledby="deleteCommentModalLabel-@rating.IdRating" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="deleteCommentModalLabel-@rating.IdRating">Confirmar Borrado</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body text-black">
+                                                ¿Estás seguro de que deseas borrar este comentario?
+                                            </div>
+                                            <div class="modal-footer">
+                                                <a onclick="borrarComentario(this)" data-dismiss="modal" data-idcomment="@rating.IdRating" data-iduser="@rating.IdUsuario" class="btn btn-danger">Borrar</a>
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr style="border-color: white;" />
+        }
+    </div>
+
+</div>

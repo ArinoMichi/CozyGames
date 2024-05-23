@@ -1,0 +1,97 @@
+﻿#carouselExampleSlidesOnly {
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+}
+
+.carousel-inner img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.rounded-container {
+    margin: 20px;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.table {
+    margin-top: 20px;
+}
+
+th, td {
+    text-align: center;
+}
+
+.text-dark {
+    color: #e2ccd3;
+    text-decoration: none;
+}
+
+.img-container {
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden;
+    border-radius: 15px; /* Ajusta el valor según tus preferencias */
+}
+
+    .img-container:hover {
+        transform: scale(1.08);
+    }
+
+.comentario {
+    background-color: #31304c;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    color: white;
+}
+
+.top-game {
+    border: 10px solid rgba(49, 48, 76, 0.9);
+    background-color: #31304c;
+    border-radius: 10px;
+    align-content: center;
+}
+
+.top-game-img {
+    max-height: 60%;
+}
+
+/* Estilos normales */
+.texto-epico {
+    font-size: 2rem;
+    position: relative;
+    color: white;
+}
+
+/* Animación de cambio de color */
+@keyframes cambioColor {
+    0% {
+        color: white;
+    }
+
+    25% {
+        color: silver;
+    }
+
+    50% {
+        color: white;
+    }
+
+    75% {
+        color: silver;
+    }
+
+    100% {
+        color: white;
+    }
+}
+
+/* Aplica la animación */
+.texto-epico.animado {
+    animation: cambioColor 4s linear infinite;
+}

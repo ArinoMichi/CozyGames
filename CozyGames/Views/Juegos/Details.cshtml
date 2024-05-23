@@ -1,0 +1,145 @@
+﻿@model Juego
+
+@{
+    var notaEntera = (double)Math.Round(Model.NotaMedia, 2);
+}
+
+<style>
+    main {
+        margin-top: 60px;
+        flex: auto;
+    }
+
+    .navbar {
+        background-color: #121123;
+    }
+
+    #searchButton {
+        position: fixed;
+        top: 100px;
+        left: 20px;
+        font-size: 24px;
+        color: #fff;
+        background-color: transparent;
+        border: none; 
+        outline: none;
+        cursor: pointer;
+    }
+</style>
+
+
+
+
+<!-- Detalles del Juego -->
+<div class="container mt-4 p-5" style="background-color:#121123">
+    <button id="searchButton" class="btn rounded-button" type="submit">
+        <i class="bi bi-arrow-left"></i>
+    </button>
+    <div class="row">
+        <div class="col-md-4 d-flex justify-content-center align-items-center">
+            <img src="@Model.ImagenVertical" class="" width="300" height="400" alt="Imagen Vertical del Juego" />
+        </div>
+        <div class="col-md-8">
+            <div class="row p-3">
+                <h1 class="text-white">@Model.Nombre</h1>
+            </div>
+            <div class="row p-3">
+                <h2 class="text-white">Nota media: @notaEntera</h2>
+            </div>
+            <div class="row p-3">
+                <p class="text-white">@Model.Descripcion</p>
+            </div>
+            <div class="col-12 mt-3">
+                <hr style="border-top: 1px solid #fff;">
+            </div>
+            <div class="row p-3 justify-content-evenly">
+                <div class="col-12 col-md-4 mb-3">
+                    @if (ViewData["USER"] == null)
+                    {
+                        <a asp-action="LogIn" asp-controller="Users" type="button" style="width: 100%; background-color:#ffbade; color:#201f31;font-weight:700" class="btn btn-lg">
+                            Rate
+                        </a>
+                    }
+                    else
+                    {
+                        <button type="button" style="width: 100%; background-color:#ffbade; color:#201f31;font-weight:700" class="btn btn-lg" data-bs-toggle="modal" data-bs-target="#ratingModal">
+                            Rate
+                        </button>
+                    }
+                </div>
+                <div class="col-12 col-md-4">
+                    <a href="@Model.Enlace" class="btn btn-light btn-lg text-dark" style="width: 100%;font-weight:700">
+                        Buy
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="ratingModal" tabindex="-1" aria-labelledby="ratingModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ratingModalLabel">Rate @Model.Nombre</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                
+                <div class="mb-4">
+                    <img src="@Model.ImagenBanner" alt="@Model.Nombre" class="img-fluid rounded" />
+                </div>
+
+                
+                <form method="post" action="/Juegos/Rate">
+                    <div class="mb-3">
+                        <label for="nota" class="form-label">Nota:</label>
+                        <input type="number" class="form-control" name="nota" id="nota" min="0" max="10" step="0.1" required>
+                        <input type="hidden" class="form-control" name="idjuego" value="@Model.IdJuego">
+                    </div>
+                    <div class="mb-3">
+                        <label for="titulo" class="form-label">Titulo:</label>
+                        <input class="form-control" name="titulo" id="titulo"></input>
+                    </div>
+
+
+                    <div class="mb-3">
+                        <label for="comentario" class="form-label">Comentario:</label>
+                        <textarea class="form-control" name="comentario" id="comentario" rows="3" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn" style="width: 100%; background-color:#ffbade; color:#201f31;font-weight:700">Submit</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<br />
+
+
+<div id="containerRatings"></div>
+
+
+@section Scripts {
+    <script>
+        function likeButton(e) {
+            $(function () {
+                var commentId = $(e).data('commentid');
+                $("#containerRatings").load("/Juegos/DarLike?commentid=" + commentId + "&idjuego=" + @Model.IdJuego);
+            });
+        }
+
+        $(function () {
+            $("#containerRatings").load("/Juegos/_Ratings?id=" + @Model.IdJuego);
+        });
+
+        document.getElementById('searchButton').addEventListener('click', function () {
+            history.back();
+        });
+    </script>
+}

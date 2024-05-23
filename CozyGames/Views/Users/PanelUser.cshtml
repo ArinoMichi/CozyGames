@@ -1,0 +1,234 @@
+﻿@{
+    Usuario currentUser = null;
+    if (Context.User.Identity.IsAuthenticated)
+    {
+        string token = Context.User.FindFirst(x => x.Type == "TOKEN").Value;
+        currentUser = await service.GetCurentUser(token);
+    }
+    Usuario perfil = ViewData["USUARIO"] as Usuario;
+    List<RatingDetallado> ratings = ViewData["RATINGS"] as List<RatingDetallado>;
+    RatingsPerfil ratingPerfil = ViewData["RATINGPERFIL"] as RatingsPerfil;
+    Layout = "_LayoutUsers";
+}
+<style>
+    #searchButton {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        font-size: 24px;
+        color: #fff;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+</style>
+
+<button id="searchButton" class="btn rounded-button" type="submit">
+    <i class="bi bi-arrow-left"></i>
+</button>
+<div class="" style="margin-top:30px">
+
+    <!-- Información del Usuario -->
+
+    <div class="p-4 mt-5 text-center">
+        <div class="p-3 row">
+            <div class="col-12">
+                <img class="rounded-circle img-fluid" style="width: 300px; height: 300px;" src="@("https://storageaccountcozygames.blob.core.windows.net/fotos/" + perfil.Foto)" alt="Profile Image">
+            </div>
+            <div class="col-12 text-white mt-3">
+                <h1 class="display-4">@perfil.Nombre</h1>
+                @if (currentUser != null && perfil != null && currentUser.IdUsuario == perfil.IdUsuario)
+                {
+                    <button type="button" class="btn" style="background-color:#ffbade; color:#201f31;font-weight:700" data-toggle="modal" data-target="#editProfileModal">
+                        Editar
+                    </button>
+                }
+            </div>
+        </div>
+    </div>
+
+    <div class="row p-4 justify-content-center" style="background-color:#121123;">
+        @if (ratingPerfil != null)
+        {
+            <!-- Comentario más votado -->
+            <div class="col-md-6 col-lg-2 mb-4 d-flex align-items-stretch">
+                <a asp-controller="Juegos" asp-action="Details" asp-route-id="@ratingPerfil.RatingMasVotado.IdJuego" class="card w-100 text-white text-center text-decoration-none" style="background-color: #31304c; border: none;">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <h5 class="card-title">Comentario más votado</h5>
+                        @if (ratingPerfil != null)
+                        {
+                            <div class="position-relative">
+                                <img src="@ratingPerfil.RatingMasVotado.FotoJuego" class="img-fluid rounded" style="max-width: 100%; height: auto;" />
+                                <div class="rating-bubble position-absolute bottom-0 end-0 bg-light d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; border-radius: 50%; color:#121123;">
+                                    <h5 class="my-2">@ratingPerfil.RatingMasVotado.Nota</h5>
+                                </div>
+                            </div>
+                            <p class="card-text mt-3">@ratingPerfil.RatingMasVotado.Comentario</p>
+                            <div class="row mt-3">
+                                <div class="d-flex justify-content-end">
+                                    <svg class="me-1" style="width:25px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                                        <path d="m11.645 20.91-.007-.003-.022-.012a15.247 15.247 0 0 1-.383-.218 25.18 25.18 0 0 1-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0 1 12 5.052 5.5 5.5 0 0 1 16.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 0 1-4.244 3.17 15.247 15.247 0 0 1-.383.219l-.022.012-.007.004-.003.001a.752.752 0 0 1-.704 0l-.003-.001Z" />
+                                    </svg>
+                                    <span class="fw-bold">@ratingPerfil.RatingMasVotado.LikesTotales</span>
+                                </div>
+                            </div>
+                        }
+                        else
+                        {
+                            <p class="card-text">No hay comentario más votado</p>
+                        }
+                    </div>
+                </a>
+            </div>
+
+            <!-- Último comentario -->
+            <div class="col-md-6 col-lg-2 mb-4 d-flex align-items-stretch">
+                <a asp-controller="Juegos" asp-action="Details" asp-route-id="@ratingPerfil.UltimoRating.IdJuego" class="card w-100 text-white text-center text-decoration-none" style="background-color: #31304c; border: none;">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <h5 class="card-title">Último comentario</h5>
+                        @if (ratingPerfil != null && ratingPerfil.UltimoRating != null)
+                        {
+                            <div class="position-relative">
+                                <img src="@ratingPerfil.UltimoRating.FotoJuego" class="img-fluid rounded" style="max-width: 100%; height: auto;" />
+                                <div class="rating-bubble position-absolute bottom-0 end-0 bg-light d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; border-radius: 50%; color:#121123;">
+                                    <h5 class="my-2">@ratingPerfil.UltimoRating.Nota</h5>
+                                </div>
+                            </div>
+                            <p class="card-text mt-3">@ratingPerfil.UltimoRating.Comentario</p>
+                            <div class="row mt-3">
+                                <div class="d-flex justify-content-end">
+                                    <svg class="me-1" style="width:25px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                                        <path d="m11.645 20.91-.007-.003-.022-.012a15.247 15.247 0 0 1-.383-.218 25.18 25.18 0 0 1-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0 1 12 5.052 5.5 5.5 0 0 1 16.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 0 1-4.244 3.17 15.247 15.247 0 0 1-.383.219l-.022.012-.007.004-.003.001a.752.752 0 0 1-.704 0l-.003-.001Z" />
+                                    </svg>
+                                    <span class="fw-bold">@ratingPerfil.UltimoRating.LikesTotales</span>
+                                </div>
+                            </div>
+                        }
+                        else
+                        {
+                            <p class="card-text">No hay último comentario</p>
+                        }
+                    </div>
+                </a>
+            </div>
+
+            <!-- Juego mas valorado -->
+            <div class="col-md-6 col-lg-2 mb-4 d-flex align-items-stretch">
+                <a asp-controller="Juegos" asp-action="Details" asp-route-id="@ratingPerfil.RatingMasAlto.IdJuego" class="card text-white text-center text-decoration-none w-100" style="background-color: #31304c; border: none;">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <h5 class="card-title">Juego más valorado</h5>
+                        @if (ratingPerfil != null && ratingPerfil.RatingMasAlto != null)
+                        {
+                            <div class="position-relative">
+                                <img src="@ratingPerfil.RatingMasAlto.FotoJuego" class="img-fluid rounded" style="max-width: 100%; height: auto;" />
+                                <div class="rating-bubble position-absolute bottom-0 end-0 bg-light d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; border-radius: 50%; color:#121123;">
+                                    <h5 class="my-2">@ratingPerfil.RatingMasAlto.Nota</h5>
+                                </div>
+                            </div>
+                            <p class="card-text mt-3">@ratingPerfil.RatingMasAlto.Comentario</p>
+                            <div class="row mt-3">
+                                <div class="d-flex justify-content-end">
+                                    <svg class="me-1" style="width:25px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                                        <path d="m11.645 20.91-.007-.003-.022-.012a15.247 15.247 0 0 1-.383-.218 25.18 25.18 0 0 1-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0 1 12 5.052 5.5 5.5 0 0 1 16.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 0 1-4.244 3.17 15.247 15.247 0 0 1-.383.219l-.022.012-.007.004-.003.001a.752.752 0 0 1-.704 0l-.003-.001Z" />
+                                    </svg>
+                                    <span class="fw-bold">@ratingPerfil.RatingMasAlto.LikesTotales</span>
+                                </div>
+                            </div>
+                        }
+                        else
+                        {
+                            <p class="card-text">No hay último comentario</p>
+                        }
+                    </div>
+                </a>
+            </div>
+
+            <!-- Juego menos valorado -->
+            <div class="col-md-6 col-lg-2 mb-4 d-flex align-items-stretch">
+                <a asp-controller="Juegos" asp-action="Details" asp-route-id="@ratingPerfil.RatingMasBajo.IdJuego" class="card text-white text-center text-decoration-none w-100" style="background-color: #31304c; border: none;">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <h5 class="card-title">Juego menos valorado</h5>
+                        @if (ratingPerfil != null && ratingPerfil.RatingMasBajo != null)
+                        {
+                            <div class="position-relative">
+                                <img src="@ratingPerfil.RatingMasBajo.FotoJuego" class="img-fluid rounded" style="max-width: 100%; height: auto;" />
+                                <div class="rating-bubble position-absolute bottom-0 bg-light end-0 d-flex align-items-center justify-content-center" style=" margin-top:50px; width: 50px; height: 50px; border-radius: 50%;color:#121123;">
+                                    <h5 class="my-2">@ratingPerfil.RatingMasBajo.Nota</h5>
+                                </div>
+                            </div>
+                            <p class="card-text mt-3">@ratingPerfil.RatingMasBajo.Comentario</p>
+                            <div class="row mt-3">
+                                <div class="d-flex justify-content-end">
+                                    <svg class="me-1" style="width:25px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                                        <path d="m11.645 20.91-.007-.003-.022-.012a15.247 15.247 0 0 1-.383-.218 25.18 25.18 0 0 1-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0 1 12 5.052 5.5 5.5 0 0 1 16.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 0 1-4.244 3.17 15.247 15.247 0 0 1-.383.219l-.022.012-.007.004-.003.001a.752.752 0 0 1-.704 0l-.003-.001Z" />
+                                    </svg>
+                                    <span class="fw-bold">@ratingPerfil.RatingMasBajo.LikesTotales</span>
+                                </div>
+                            </div>
+                        }
+                        else
+                        {
+                            <p class="card-text">No hay último comentario</p>
+                        }
+                    </div>
+                </a>
+            </div>
+        }
+    </div>
+
+    <div id="containerRatings"></div>
+
+    <!-- Modal de Edición de Perfil -->
+    <div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="editProfileModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editProfileModalLabel">Editar Perfil</h5>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form method="post" enctype="multipart/form-data">
+                        <input type="hidden" value="@perfil.IdUsuario" name="IdUsuario" />
+                        <div class="mb-3">
+                            <label for="editFoto" class="form-label">Foto:</label>
+                            <input type="file" class="form-control" id="editFoto" name="Foto">
+                        </div>
+                        <div class="mb-3">
+                            <label for="editName" class="form-label">Nombre:</label>
+                            <input type="text" class="form-control" id="editName" name="Nombre" value="@perfil.Nombre">
+                        </div>
+                        <div class="mb-3">
+                            <label for="editEmail" class="form-label">Correo Electrónico:</label>
+                            <input type="email" class="form-control" id="editEmail" name="Email" value="@perfil.Email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="editPassword" class="form-label">Contraseña:</label>
+                            <input type="password" class="form-control" name="PasswordOriginal" id="editPassword">
+                        </div>
+                        <button type="submit" class="btn" style="width: 100%; background-color:#ffbade; color:#201f31;font-weight:700">Guardar Cambios</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    @section Scripts {
+        <script>
+            function borrarComentario(e) {
+                let idcomment = $(e).data("idcomment");
+                let iduser = $(e).data("iduser");
+                $("#containerRatings").load("/Users/DeleteComment?idcomment=" + idcomment + "&iduser=" + iduser);
+            }
+
+            $(function () {
+                $("#containerRatings").load("/Users/_RatingsUser?iduser=" + @perfil.IdUsuario)
+            });
+
+            document.getElementById('searchButton').addEventListener('click', function () {
+                history.back();
+            });
+        </script>
+    }

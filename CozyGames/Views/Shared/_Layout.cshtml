@@ -1,0 +1,186 @@
+﻿@{
+    Usuario user = null;
+    if (Context.User.Identity.IsAuthenticated)
+    {
+        string token = Context.User.FindFirst(x => x.Type == "TOKEN").Value;
+       user  = await service.GetCurentUser(token);
+    }
+
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>CozyGames</title>
+    <link rel="icon" href="https://minecraft.wiki/images/Bedrock_Edition_App_Store_icon_2.png?ec415" type="image/x-icon" />
+    <link href="~/lib/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #201f31;
+            min-height: 100vh;
+        }
+
+        main {
+            flex: 1;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            min-height: 30px;
+            background-color: rgba(180, 206, 179, 0);
+            backdrop-filter: blur(0);
+            transition: background-color 0.3s, backdrop-filter 0.3s;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+            .navbar.translucent {
+                background-color: rgba(32, 31, 49, 0.8);
+                backdrop-filter: blur(10px);
+            }
+
+        .custom-dropdown-toggle::after {
+            content: none;
+        }
+
+        .custom-dropdown-menu {
+            margin-top: 8px;
+            left: auto !important;
+            right: 0;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .rounded-input {
+            border-radius: 20px;
+        }
+
+        .rounded-button {
+            border-radius: 20px;
+            background-color: #ffbade;
+            color: white;
+        }
+
+        footer {
+            margin-top: auto;
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand text-light d-flex justify-content-center align-items-center" asp-controller="Juegos" asp-action="Index">
+                <img src="~/images/logo.png" style="max-width: 300px; height: 40px;" />
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                <div class="d-flex justify-content-between align-items-center w-100">
+                    <form class="d-flex mx-auto search-container" method="post" action="/Juegos/ListaJuegos">
+                        <input class="form-control me-2 rounded-input" type="search" placeholder="Search" name="search" aria-label="Search">
+                        <button class="btn rounded-button" type="submit">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </form>
+                    <ul class="navbar-nav">
+                        @if (user == null)
+                        {
+                            <li class="nav-item">
+                                <button class="btn" style="background-color:#ffbade;color:#201f31;font-weight:bold"
+                                        data-bs-toggle="modal" data-bs-target="#loginModal">
+                                    Log in
+                                </button>
+                            </li>
+                        }
+                        else
+                        {
+                            <div class="nav-item dropdown">
+                                <a class="dropdown-toggle nav-link custom-dropdown-toggle" asp-action="PanelUser" asp-controller="Users" data-bs-toggle="dropdown">
+                                    <img src="@("https://storageaccountcozygames.blob.core.windows.net/fotos/" + user.Foto)"
+                                         alt="" class="rounded-circle" width="50" height="50">
+                                </a>
+                                <ul style="left:-7rem" class="position-absolute dropdown-menu dropdown-menu-start" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" asp-action="PanelUser" asp-controller="Users" asp-route-idUser="@user.IdUsuario">Perfil</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" asp-action="LogOut" asp-controller="Users">Log out</a></li>
+                                </ul>
+                            </div>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <main style="">
+        @RenderBody()
+    </main>
+
+    <footer class="text-light text-center py-3" style="background-color:black">
+        <div class="container">
+            <p>&copy; 2024 CozyGames. (By Alexia Molina)</p>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("scroll", function () {
+            var navbar = document.querySelector(".navbar");
+            if (window.scrollY > 60) {
+                navbar.classList.add("translucent");
+            } else {
+                navbar.classList.remove("translucent");
+            }
+        });
+    </script>
+    @await RenderSectionAsync("scripts", false)
+</body>
+</html>
+
+<!-- Modal de inicio de sesión -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content rounded-3">
+            <div class="modal-header text-center" style="background:none">
+                <button type="button" class="btn-close rounded-button" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" style="background-color:white">
+                <form action="/Users/LogIn" method="post">
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="text" class="form-control" id="email" name="email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" name="password">
+                    </div>
+                    <div class="mb-3">
+                        <a asp-controller="Users" asp-action="SignUp">New here? create account</a>
+                    </div>
+
+                    <button type="submit" class="btn col-12" style="background-color:#ffbade;color:#201f31">Log in</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
