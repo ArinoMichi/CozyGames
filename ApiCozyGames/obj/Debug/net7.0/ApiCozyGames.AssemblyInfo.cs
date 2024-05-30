@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ApiCozyGames")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+52b0b4f87e81816b2dadd70f8c066911d6149954")]
 [assembly: System.Reflection.AssemblyProductAttribute("ApiCozyGames")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ApiCozyGames")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

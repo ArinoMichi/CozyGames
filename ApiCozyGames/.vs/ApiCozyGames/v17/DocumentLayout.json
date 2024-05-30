@@ -1,0 +1,318 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\WEB_MASTER\\CozyGames\\ApiCozyGames\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C69CCD8C-92F5-4169-AACE-99718757C450}|ApiCozyGames.csproj|e:\\web_master\\cozygames\\apicozygames\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{C69CCD8C-92F5-4169-AACE-99718757C450}|ApiCozyGames.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C69CCD8C-92F5-4169-AACE-99718757C450}|ApiCozyGames.csproj|E:\\WEB_MASTER\\CozyGames\\ApiCozyGames\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C69CCD8C-92F5-4169-AACE-99718757C450}|ApiCozyGames.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C69CCD8C-92F5-4169-AACE-99718757C450}|ApiCozyGames.csproj|E:\\WEB_MASTER\\CozyGames\\ApiCozyGames\\helpers\\helperactionservicesoauth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C69CCD8C-92F5-4169-AACE-99718757C450}|ApiCozyGames.csproj|solutionrelative:helpers\\helperactionservicesoauth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C69CCD8C-92F5-4169-AACE-99718757C450}|ApiCozyGames.csproj|E:\\WEB_MASTER\\CozyGames\\ApiCozyGames\\controllers\\gamescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C69CCD8C-92F5-4169-AACE-99718757C450}|ApiCozyGames.csproj|solutionrelative:controllers\\gamescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C69CCD8C-92F5-4169-AACE-99718757C450}|ApiCozyGames.csproj|E:\\WEB_MASTER\\CozyGames\\ApiCozyGames\\repositories\\repositoryusers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C69CCD8C-92F5-4169-AACE-99718757C450}|ApiCozyGames.csproj|solutionrelative:repositories\\repositoryusers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C69CCD8C-92F5-4169-AACE-99718757C450}|ApiCozyGames.csproj|E:\\WEB_MASTER\\CozyGames\\ApiCozyGames\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C69CCD8C-92F5-4169-AACE-99718757C450}|ApiCozyGames.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C69CCD8C-92F5-4169-AACE-99718757C450}|ApiCozyGames.csproj|E:\\WEB_MASTER\\CozyGames\\ApiCozyGames\\controllers\\ratingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C69CCD8C-92F5-4169-AACE-99718757C450}|ApiCozyGames.csproj|solutionrelative:controllers\\ratingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C69CCD8C-92F5-4169-AACE-99718757C450}|ApiCozyGames.csproj|E:\\WEB_MASTER\\CozyGames\\ApiCozyGames\\repositories\\repositorygamessqlserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C69CCD8C-92F5-4169-AACE-99718757C450}|ApiCozyGames.csproj|solutionrelative:repositories\\repositorygamessqlserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C69CCD8C-92F5-4169-AACE-99718757C450}|ApiCozyGames.csproj|E:\\WEB_MASTER\\CozyGames\\ApiCozyGames\\models\\ratingsperfil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C69CCD8C-92F5-4169-AACE-99718757C450}|ApiCozyGames.csproj|solutionrelative:models\\ratingsperfil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C69CCD8C-92F5-4169-AACE-99718757C450}|ApiCozyGames.csproj|E:\\WEB_MASTER\\CozyGames\\ApiCozyGames\\helpers\\helpercryptography.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C69CCD8C-92F5-4169-AACE-99718757C450}|ApiCozyGames.csproj|solutionrelative:helpers\\helpercryptography.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C69CCD8C-92F5-4169-AACE-99718757C450}|ApiCozyGames.csproj|E:\\WEB_MASTER\\CozyGames\\ApiCozyGames\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C69CCD8C-92F5-4169-AACE-99718757C450}|ApiCozyGames.csproj|solutionrelative:models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C69CCD8C-92F5-4169-AACE-99718757C450}|ApiCozyGames.csproj|E:\\WEB_MASTER\\CozyGames\\ApiCozyGames\\models\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C69CCD8C-92F5-4169-AACE-99718757C450}|ApiCozyGames.csproj|solutionrelative:models\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C69CCD8C-92F5-4169-AACE-99718757C450}|ApiCozyGames.csproj|E:\\WEB_MASTER\\CozyGames\\ApiCozyGames\\models\\ratingdetallado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C69CCD8C-92F5-4169-AACE-99718757C450}|ApiCozyGames.csproj|solutionrelative:models\\ratingdetallado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C69CCD8C-92F5-4169-AACE-99718757C450}|ApiCozyGames.csproj|E:\\WEB_MASTER\\CozyGames\\ApiCozyGames\\apicozygames.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{C69CCD8C-92F5-4169-AACE-99718757C450}|ApiCozyGames.csproj|solutionrelative:apicozygames.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C69CCD8C-92F5-4169-AACE-99718757C450}|ApiCozyGames.csproj|E:\\WEB_MASTER\\CozyGames\\ApiCozyGames\\models\\registermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C69CCD8C-92F5-4169-AACE-99718757C450}|ApiCozyGames.csproj|solutionrelative:models\\registermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C69CCD8C-92F5-4169-AACE-99718757C450}|ApiCozyGames.csproj|E:\\WEB_MASTER\\CozyGames\\ApiCozyGames\\models\\likecomentario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C69CCD8C-92F5-4169-AACE-99718757C450}|ApiCozyGames.csproj|solutionrelative:models\\likecomentario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C69CCD8C-92F5-4169-AACE-99718757C450}|ApiCozyGames.csproj|E:\\WEB_MASTER\\CozyGames\\ApiCozyGames\\data\\gamescontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C69CCD8C-92F5-4169-AACE-99718757C450}|ApiCozyGames.csproj|solutionrelative:data\\gamescontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C69CCD8C-92F5-4169-AACE-99718757C450}|ApiCozyGames.csproj|E:\\WEB_MASTER\\CozyGames\\ApiCozyGames\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C69CCD8C-92F5-4169-AACE-99718757C450}|ApiCozyGames.csproj|solutionrelative:models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 347,
+          "SelectedChildIndex": 10,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\WEB_MASTER\\CozyGames\\ApiCozyGames\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "E:\\WEB_MASTER\\CozyGames\\ApiCozyGames\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T11:20:06.145Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "E:\\WEB_MASTER\\CozyGames\\ApiCozyGames\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
+              "ToolTip": "E:\\WEB_MASTER\\CozyGames\\ApiCozyGames\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Controllers\\AuthController.cs",
+              "ViewState": "AQIAAHMAAAAAAAAAAAAcwHwAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T11:20:06.707Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RepositoryUsers.cs",
+              "DocumentMoniker": "E:\\WEB_MASTER\\CozyGames\\ApiCozyGames\\Repositories\\RepositoryUsers.cs",
+              "RelativeDocumentMoniker": "Repositories\\RepositoryUsers.cs",
+              "ToolTip": "E:\\WEB_MASTER\\CozyGames\\ApiCozyGames\\Repositories\\RepositoryUsers.cs",
+              "RelativeToolTip": "Repositories\\RepositoryUsers.cs",
+              "ViewState": "AQIAADIAAAAAAAAAAAAwwEUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T11:20:06.709Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "E:\\WEB_MASTER\\CozyGames\\ApiCozyGames\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\ErrorViewModel.cs",
+              "ToolTip": "E:\\WEB_MASTER\\CozyGames\\ApiCozyGames\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "Models\\ErrorViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T11:20:06.712Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "RepositoryGamesSqlServer.cs",
+              "DocumentMoniker": "E:\\WEB_MASTER\\CozyGames\\ApiCozyGames\\Repositories\\RepositoryGamesSqlServer.cs",
+              "RelativeDocumentMoniker": "Repositories\\RepositoryGamesSqlServer.cs",
+              "ToolTip": "E:\\WEB_MASTER\\CozyGames\\ApiCozyGames\\Repositories\\RepositoryGamesSqlServer.cs",
+              "RelativeToolTip": "Repositories\\RepositoryGamesSqlServer.cs",
+              "ViewState": "AQIAAHgAAAAAAAAAAAAIwIgAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T11:20:06.713Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "HelperCryptography.cs",
+              "DocumentMoniker": "E:\\WEB_MASTER\\CozyGames\\ApiCozyGames\\Helpers\\HelperCryptography.cs",
+              "RelativeDocumentMoniker": "Helpers\\HelperCryptography.cs",
+              "ToolTip": "E:\\WEB_MASTER\\CozyGames\\ApiCozyGames\\Helpers\\HelperCryptography.cs",
+              "RelativeToolTip": "Helpers\\HelperCryptography.cs",
+              "ViewState": "AQIAACcAAAAAAAAAAAAowAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T11:20:06.714Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HelperActionServicesOAuth.cs",
+              "DocumentMoniker": "E:\\WEB_MASTER\\CozyGames\\ApiCozyGames\\Helpers\\HelperActionServicesOAuth.cs",
+              "RelativeDocumentMoniker": "Helpers\\HelperActionServicesOAuth.cs",
+              "ToolTip": "E:\\WEB_MASTER\\CozyGames\\ApiCozyGames\\Helpers\\HelperActionServicesOAuth.cs",
+              "RelativeToolTip": "Helpers\\HelperActionServicesOAuth.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T11:20:06.716Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GamesController.cs",
+              "DocumentMoniker": "E:\\WEB_MASTER\\CozyGames\\ApiCozyGames\\Controllers\\GamesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\GamesController.cs",
+              "ToolTip": "E:\\WEB_MASTER\\CozyGames\\ApiCozyGames\\Controllers\\GamesController.cs",
+              "RelativeToolTip": "Controllers\\GamesController.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAQwCQAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T11:20:06.717Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "E:\\WEB_MASTER\\CozyGames\\ApiCozyGames\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "E:\\WEB_MASTER\\CozyGames\\ApiCozyGames\\appsettings.json*",
+              "RelativeToolTip": "appsettings.json*",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-05-06T11:20:06.721Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "RatingsController.cs",
+              "DocumentMoniker": "E:\\WEB_MASTER\\CozyGames\\ApiCozyGames\\Controllers\\RatingsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\RatingsController.cs",
+              "ToolTip": "E:\\WEB_MASTER\\CozyGames\\ApiCozyGames\\Controllers\\RatingsController.cs",
+              "RelativeToolTip": "Controllers\\RatingsController.cs",
+              "ViewState": "AQIAADkAAAAAAAAAAAAmwEMAAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T11:20:06.705Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "RatingsPerfil.cs",
+              "DocumentMoniker": "E:\\WEB_MASTER\\CozyGames\\ApiCozyGames\\Models\\RatingsPerfil.cs",
+              "RelativeDocumentMoniker": "Models\\RatingsPerfil.cs",
+              "ToolTip": "E:\\WEB_MASTER\\CozyGames\\ApiCozyGames\\Models\\RatingsPerfil.cs",
+              "RelativeToolTip": "Models\\RatingsPerfil.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T11:20:06.719Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "LoginModel.cs",
+              "DocumentMoniker": "E:\\WEB_MASTER\\CozyGames\\ApiCozyGames\\Models\\LoginModel.cs",
+              "RelativeDocumentMoniker": "Models\\LoginModel.cs",
+              "ToolTip": "E:\\WEB_MASTER\\CozyGames\\ApiCozyGames\\Models\\LoginModel.cs",
+              "RelativeToolTip": "Models\\LoginModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T11:20:06.722Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "RatingDetallado.cs",
+              "DocumentMoniker": "E:\\WEB_MASTER\\CozyGames\\ApiCozyGames\\Models\\RatingDetallado.cs",
+              "RelativeDocumentMoniker": "Models\\RatingDetallado.cs",
+              "ToolTip": "E:\\WEB_MASTER\\CozyGames\\ApiCozyGames\\Models\\RatingDetallado.cs",
+              "RelativeToolTip": "Models\\RatingDetallado.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T11:20:06.723Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "LikeComentario.cs",
+              "DocumentMoniker": "E:\\WEB_MASTER\\CozyGames\\ApiCozyGames\\Models\\LikeComentario.cs",
+              "RelativeDocumentMoniker": "Models\\LikeComentario.cs",
+              "ToolTip": "E:\\WEB_MASTER\\CozyGames\\ApiCozyGames\\Models\\LikeComentario.cs",
+              "RelativeToolTip": "Models\\LikeComentario.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T11:20:06.724Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ApiCozyGames.csproj",
+              "DocumentMoniker": "E:\\WEB_MASTER\\CozyGames\\ApiCozyGames\\ApiCozyGames.csproj",
+              "RelativeDocumentMoniker": "ApiCozyGames.csproj",
+              "ToolTip": "E:\\WEB_MASTER\\CozyGames\\ApiCozyGames\\ApiCozyGames.csproj",
+              "RelativeToolTip": "ApiCozyGames.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003627|",
+              "WhenOpened": "2024-05-06T11:20:06.726Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "RegisterModel.cs",
+              "DocumentMoniker": "E:\\WEB_MASTER\\CozyGames\\ApiCozyGames\\Models\\RegisterModel.cs",
+              "RelativeDocumentMoniker": "Models\\RegisterModel.cs",
+              "ToolTip": "E:\\WEB_MASTER\\CozyGames\\ApiCozyGames\\Models\\RegisterModel.cs",
+              "RelativeToolTip": "Models\\RegisterModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T11:20:06.727Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "GamesContext.cs",
+              "DocumentMoniker": "E:\\WEB_MASTER\\CozyGames\\ApiCozyGames\\Data\\GamesContext.cs",
+              "RelativeDocumentMoniker": "Data\\GamesContext.cs",
+              "ToolTip": "E:\\WEB_MASTER\\CozyGames\\ApiCozyGames\\Data\\GamesContext.cs",
+              "RelativeToolTip": "Data\\GamesContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T11:20:06.729Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "E:\\WEB_MASTER\\CozyGames\\ApiCozyGames\\Models\\Usuario.cs",
+              "RelativeDocumentMoniker": "Models\\Usuario.cs",
+              "ToolTip": "E:\\WEB_MASTER\\CozyGames\\ApiCozyGames\\Models\\Usuario.cs",
+              "RelativeToolTip": "Models\\Usuario.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T11:20:06.739Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

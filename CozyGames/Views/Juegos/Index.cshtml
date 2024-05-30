@@ -3,7 +3,9 @@
 @{
     List<RatingDetallado> ratings = ViewData["TOPRAT"] as List<RatingDetallado>;
     List<Juego> top10 = ViewData["TOP10"] as List<Juego>;
+    string URL = keysModel.BucketCozyUrl;
 }
+
 <head>
     <link rel="stylesheet" href="@Url.Content("~/css/index.css")" />
 </head>
@@ -118,7 +120,7 @@
                                             <div class="col-sm-5 col-md-4 d-flex align-items-center">
                                                 <a class="text-decoration-none" asp-action="PanelUser" asp-controller="Users" asp-route-idUser="@rating.IdUsuario">
                                                     <img class="img-fluid rounded-circle col-6 col-md-10 mx-auto d-block"
-                                                         src="@("https://storageaccountcozygames.blob.core.windows.net/fotos/" + rating.FotoUser)" />
+                                                         src="@(URL + rating.FotoUser)" />
                                                 </a>
                                             </div>
                                             <div class="col-sm-7 col-md-8 mt-sm-0 mt-3 d-flex flex-column align-items-center align-items-sm-start justify-content-sm-center">

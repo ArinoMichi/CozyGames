@@ -1,4 +1,5 @@
-﻿using CozyGames.Models;
+﻿using Amazon.S3;
+using CozyGames.Models;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using NuGet.ProjectModel;
@@ -13,15 +14,19 @@ namespace CozyGames.Services
 {
     public class ServiceGames
     {
+        private IAmazonS3 Client;
+        private string BucketName;
         private string UrlApi;
         private MediaTypeWithQualityHeaderValue header;
         private IHttpContextAccessor httpContextAccessor;
 
-        public ServiceGames(IConfiguration configuration, IHttpContextAccessor httpContextAccessor)
+        public ServiceGames( IHttpContextAccessor httpContextAccessor, KeysModel keys, IAmazonS3 client)
         {
             this.header =
                 new MediaTypeWithQualityHeaderValue("application/json");
-            this.UrlApi = configuration.GetValue<string>("ApiUrls:ApiCozyGames");
+            this.Client = client;
+            this.BucketName = keys.BucketName;
+            this.UrlApi = keys.UrlApi;
             this.httpContextAccessor = httpContextAccessor;
         }
 

@@ -5,7 +5,7 @@
         string token = Context.User.FindFirst(x => x.Type == "TOKEN").Value;
        user  = await service.GetCurentUser(token);
     }
-
+    string URL = keysModel.BucketCozyUrl;
 }
 
 <!DOCTYPE html>
@@ -112,7 +112,7 @@
                         {
                             <div class="nav-item dropdown">
                                 <a class="dropdown-toggle nav-link custom-dropdown-toggle" asp-action="PanelUser" asp-controller="Users" data-bs-toggle="dropdown">
-                                    <img src="@("https://storageaccountcozygames.blob.core.windows.net/fotos/" + user.Foto)"
+                                    <img src="@(URL + user.Foto)"
                                          alt="" class="rounded-circle" width="50" height="50">
                                 </a>
                                 <ul style="left:-7rem" class="position-absolute dropdown-menu dropdown-menu-start" aria-labelledby="navbarDropdown">

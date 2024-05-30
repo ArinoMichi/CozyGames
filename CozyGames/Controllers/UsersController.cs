@@ -17,15 +17,15 @@ namespace CozyGames.Controllers
         //private RepositoryGamesSqlServer repoJuegos;
         private ServiceGames service;
         private HelperPathProvider helperPathProvider;
-        private ServiceStorageBlobs serviceBlobs;
+        private ServiceStorageAWS serviceStorage;
         private readonly IWebHostEnvironment _hostingEnvironment;
 
 
-        public UsersController(ServiceGames service, HelperPathProvider helperPathProvider, ServiceStorageBlobs serviceBlobs, IWebHostEnvironment hostingEnvironment)
+        public UsersController(ServiceGames service, HelperPathProvider helperPathProvider, ServiceStorageAWS serviceStorage, IWebHostEnvironment hostingEnvironment)
         {
             this.service = service;
             this.helperPathProvider = helperPathProvider;
-            this.serviceBlobs = serviceBlobs;
+            this.serviceStorage = serviceStorage;
             _hostingEnvironment = hostingEnvironment;
         }
 
@@ -76,7 +76,7 @@ namespace CozyGames.Controllers
                 
                 using (Stream stream = System.IO.File.OpenRead(defaultImagePath))
                 {
-                    await this.serviceBlobs.UploadBlobAsync("fotos", fileName, stream);
+                    await this.serviceStorage.UploadFileAsync(fileName, stream);
                 }
                 Usuario nuevoUsuario = new Usuario
                 {
@@ -115,7 +115,7 @@ namespace CozyGames.Controllers
             
             using (Stream stream = foto.OpenReadStream())
             {
-                await this.serviceBlobs.UploadBlobAsync("fotos", fileName, stream);
+                await this.serviceStorage.UploadFileAsync(fileName, stream);
             }
 
             Usuario perfilActualizado = new Usuario
